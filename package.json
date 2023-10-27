@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "vitest": "^0.34.6"
+    "prettier": "^3.0.3",
+    "typescript": "5.0.2",
+    "vitest": "0.31.4"
   }
 }
