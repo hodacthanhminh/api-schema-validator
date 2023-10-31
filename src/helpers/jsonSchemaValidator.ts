@@ -30,20 +30,15 @@ export function createSchema({ type ,...others}: Config): Schema {
 }
 
 export function validateTypeSchema(config: Config) {
-    return () => {
         const schema = createSchema(config);
-
         const ajv = new Ajv.default();
         ajv.validateSchema(schema);
         expect(ajv.errors).toBeNull();
-    };
 }
 
 export function validateDataSchema(assertData: any, config: Config) {
-    return () => {
         const schema = createSchema(config);
         const ajv = new Ajv.default();
         const validate = ajv.compile(schema);
         expect(validate(assertData)).toBe(true);
-    };
 }
